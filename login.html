@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Smart Academic ERP{% endblock %}
+
+{% block auth_content %}
+<div class="auth-container d-flex justify-content-center align-items-center py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="auth-card">
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs nav-fill" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-form" type="button" role="tab" aria-controls="login-form" aria-selected="true">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-form" type="button" role="tab" aria-controls="register-form" aria-selected="false">Register</button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="authTabsContent">
+                        <!-- Login Form -->
+                        <div class="tab-pane fade show active" id="login-form" role="tabpanel" aria-labelledby="login-tab">
+                            <div class="auth-header">
+                                <h3><i class="fas fa-user-graduate me-2"></i>Student Login</h3>
+                                <p class="text-white-50 mb-0">Access your academic portal</p>
+                            </div>
+                            <div class="auth-form">
+                                <form id="login-form-element" action="{{ url_for('auth_login') }}" method="post">
+                                    <div class="mb-3">
+                                        <label for="login-enrollment" class="form-label">Enrollment Number</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                            <input type="text" class="form-control" id="login-enrollment" name="enrollment" placeholder="Enter your enrollment number" required>
+                                        </div>
+                                        <div id="login-enrollment-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="login-password" class="form-label">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
+                                        </div>
+                                        <div id="login-password-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-academic">Login <i class="fas fa-sign-in-alt ms-1"></i></button>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <a href="#" class="text-muted small">Forgot Password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Registration Form -->
+                        <div class="tab-pane fade" id="register-form" role="tabpanel" aria-labelledby="register-tab">
+                            <div class="auth-header">
+                                <h3><i class="fas fa-user-plus me-2"></i>New Registration</h3>
+                                <p class="text-white-50 mb-0">Create your student account</p>
+                            </div>
+                            <div class="auth-form">
+                                <form id="register-form-element" action="{{ url_for('auth_register') }}" method="post">
+                                    <div class="mb-3">
+                                        <label for="register-fullname" class="form-label">Full Name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <input type="text" class="form-control" id="register-fullname" name="fullname" placeholder="Enter your full name" required>
+                                        </div>
+                                        <div id="register-fullname-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register-enrollment" class="form-label">Enrollment Number</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                            <input type="text" class="form-control" id="register-enrollment" name="enrollment" placeholder="Enter your enrollment number" required>
+                                        </div>
+                                        <div id="register-enrollment-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register-password" class="form-label">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="register-password" name="password" placeholder="Create a password" required>
+                                        </div>
+                                        <div id="register-password-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="register-confirm-password" class="form-label">Confirm Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="register-confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                                        </div>
+                                        <div id="register-confirm-password-error" class="form-text text-danger"></div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-academic">Register <i class="fas fa-user-plus ms-1"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4 text-white">
+                    <p>© 2023 Smart Academic ERP. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

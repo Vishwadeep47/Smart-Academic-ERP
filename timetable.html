@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+
+{% block title %}Timetable - Smart Academic ERP{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="page-title">My Timetable</h2>
+        </div>
+    </div>
+    
+    <!-- Weekly Timetable -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="academic-card">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0"><i class="fas fa-calendar-week me-2"></i> Weekly Schedule</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary me-2">
+                            <i class="fas fa-download me-1"></i> Download
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-print me-1"></i> Print
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="timetable-container">
+                    <table class="table table-bordered timetable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 9:00 - 10:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>9:00</strong><br>
+                                    <small>10:00</small>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS101: Intro to Programming</h6>
+                                        <p>Room: LT-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS102: Data Structures</h6>
+                                        <p>Room: LT-03 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS101: Intro to Programming</h6>
+                                        <p>Room: LT-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS102: Data Structures</h6>
+                                        <p>Room: LT-03 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+                            <!-- 10:00 - 11:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>10:00</strong><br>
+                                    <small>11:00</small>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS103: Database Systems</h6>
+                                        <p>Room: LT-02 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS103: Database Systems</h6>
+                                        <p>Room: LT-02 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS103: Database Systems</h6>
+                                        <p>Room: Lab-02 | Professor</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- 11:00 - 12:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>11:00</strong><br>
+                                    <small>12:00</small>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS104: Computer Networks</h6>
+                                        <p>Room: LT-04 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS104: Computer Networks</h6>
+                                        <p>Room: LT-04 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS104: Computer Networks</h6>
+                                        <p>Room: Lab-03 | Professor</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- 12:00 - 01:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>12:00</strong><br>
+                                    <small>13:00</small>
+                                </td>
+                                <td class="table-light text-center" colspan="5">
+                                    <strong>Lunch Break</strong>
+                                </td>
+                            </tr>
+                            
+                            <!-- 01:00 - 02:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>13:00</strong><br>
+                                    <small>14:00</small>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS105: Software Engineering</h6>
+                                        <p>Room: LT-05 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS105: Software Engineering</h6>
+                                        <p>Room: LT-05 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+                            <!-- 02:00 - 03:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>14:00</strong><br>
+                                    <small>15:00</small>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS101: Lab Session</h6>
+                                        <p>Room: Lab-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS102: Lab Session</h6>
+                                        <p>Room: Lab-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS105: Software Engineering</h6>
+                                        <p>Room: LT-05 | Professor</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- 03:00 - 04:00 -->
+                            <tr>
+                                <td class="table-light text-center">
+                                    <strong>15:00</strong><br>
+                                    <small>16:00</small>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS101: Lab Session</h6>
+                                        <p>Room: Lab-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>Library Hours</h6>
+                                        <p>Self Study</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>CS102: Lab Session</h6>
+                                        <p>Room: Lab-01 | Professor</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable-slot">
+                                        <h6>Project Meeting</h6>
+                                        <p>Room: Seminar Hall</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Upcoming Classes -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-bell me-2"></i> Today's Classes</h5>
+                <div class="list-group">
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">CS102: Data Structures</h6>
+                            <small class="badge bg-success">Completed</small>
+                        </div>
+                        <p class="mb-1">9:00 AM - 10:00 AM | Room: LT-03</p>
+                        <small class="text-muted">Professor</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">CS103: Database Systems</h6>
+                            <small class="badge bg-success">Completed</small>
+                        </div>
+                        <p class="mb-1">10:00 AM - 11:00 AM | Room: LT-02</p>
+                        <small class="text-muted">Professor</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">CS105: Software Engineering</h6>
+                            <small class="badge bg-warning">Now</small>
+                        </div>
+                        <p class="mb-1">1:00 PM - 2:00 PM | Room: LT-05</p>
+                        <small class="text-muted">Professor</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Library Hours (Self Study)</h6>
+                            <small class="badge bg-primary">Upcoming</small>
+                        </div>
+                        <p class="mb-1">3:00 PM - 4:00 PM | Library</p>
+                        <small class="text-muted">Self-paced learning</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-calendar-alt me-2"></i> Upcoming Events</h5>
+                <div class="list-group">
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Mid-Term Examinations</h6>
+                            <small class="text-danger">6 days left</small>
+                        </div>
+                        <p class="mb-1">November 15-20, 2023</p>
+                        <small class="text-muted">All courses</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Guest Lecture: AI Ethics</h6>
+                            <small class="text-danger">2 days left</small>
+                        </div>
+                        <p class="mb-1">November 10, 2023 | 2:00 PM</p>
+                        <small class="text-muted">Main Auditorium</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Project Presentation: CS105</h6>
+                            <small class="text-danger">10 days left</small>
+                        </div>
+                        <p class="mb-1">November 19, 2023 | 11:00 AM</p>
+                        <small class="text-muted">Seminar Hall</small>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Hackathon: Code for Good</h6>
+                            <small class="text-danger">15 days left</small>
+                        </div>
+                        <p class="mb-1">November 24-25, 2023</p>
+                        <small class="text-muted">Computer Science Block</small>
+                    </div>
+                </div>
+                <div class="d-grid mt-3">
+                    <button class="btn btn-outline-primary btn-sm">View Academic Calendar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}Attendance - Smart Academic ERP{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="page-title">Attendance Record</h2>
+        </div>
+    </div>
+    
+    <!-- Overall Attendance Summary -->
+    <div class="row mb-4">
+        <div class="col-md-4 mb-4">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="card-title">Overall Attendance</div>
+                <div class="card-value">88%</div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="mt-3 text-muted">
+                    <small>Minimum required: 75%</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="card-title">Classes Attended</div>
+                <div class="card-value">252/285</div>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="mt-3 text-muted">
+                    <small>Last updated: Yesterday</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="card-title">Leave Requests</div>
+                <div class="card-value">3</div>
+                <div class="mt-3">
+                    <button class="btn btn-sm btn-outline-primary">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Course-wise Attendance -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-list-alt me-2"></i> Course-wise Attendance</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Instructor</th>
+                                <th>Classes Held</th>
+                                <th>Classes Attended</th>
+                                <th>Percentage</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CS101</td>
+                                <td>Introduction to Programming</td>
+                                <td>Professor</td>
+                                <td>60</td>
+                                <td>51</td>
+                                <td>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">85%</span>
+                                </td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>CS102</td>
+                                <td>Data Structures</td>
+                                <td>Professor</td>
+                                <td>64</td>
+                                <td>59</td>
+                                <td>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">92%</span>
+                                </td>
+                                <td><span class="badge bg-success">Excellent</span></td>
+                            </tr>
+                            <tr>
+                                <td>CS103</td>
+                                <td>Database Systems</td>
+                                <td>Professor</td>
+                                <td>54</td>
+                                <td>42</td>
+                                <td>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">78%</span>
+                                </td>
+                                <td><span class="badge bg-warning">Satisfactory</span></td>
+                            </tr>
+                            <tr>
+                                <td>CS104</td>
+                                <td>Computer Networks</td>
+                                <td>Professor</td>
+                                <td>58</td>
+                                <td>51</td>
+                                <td>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">88%</span>
+                                </td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>CS105</td>
+                                <td>Software Engineering</td>
+                                <td>Professor</td>
+                                <td>49</td>
+                                <td>47</td>
+                                <td>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">95%</span>
+                                </td>
+                                <td><span class="badge bg-success">Excellent</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Monthly Attendance -->
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-calendar-alt me-2"></i> Monthly Attendance (November 2023)</h5>
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered text-center">
+                        <thead>
+                            <tr class="table-light">
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                <th>Sun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted">30</td>
+                                <td class="text-muted">31</td>
+                                <td>1 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>2 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>3 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>4 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td class="table-secondary">5</td>
+                            </tr>
+                            <tr>
+                                <td>6 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>7 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>8 <div class="bg-warning rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>9 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>10 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>11 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td class="table-secondary">12</td>
+                            </tr>
+                            <tr>
+                                <td>13 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>14 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>15 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>16 <div class="bg-danger rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>17 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>18 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td class="table-secondary">19</td>
+                            </tr>
+                            <tr>
+                                <td>20 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>21 <div class="bg-warning rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>22 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>23 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>24 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td>25 <div class="bg-success rounded-circle mx-auto mt-1" style="width: 8px; height: 8px;"></div></td>
+                                <td class="table-secondary">26</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td class="text-muted">1</td>
+                                <td class="text-muted">2</td>
+                                <td class="text-muted">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3 d-flex justify-content-between">
+                    <div>
+                        <span class="me-3"><i class="fas fa-circle text-success me-1" style="font-size: 8px;"></i> Present</span>
+                        <span class="me-3"><i class="fas fa-circle text-warning me-1" style="font-size: 8px;"></i> Partial</span>
+                        <span><i class="fas fa-circle text-danger me-1" style="font-size: 8px;"></i> Absent</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary">Previous Month</button>
+                        <button class="btn btn-sm btn-outline-primary ms-2">Next Month</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-clock me-2"></i> Recent Activity</h5>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">CS105: Software Engineering</h6>
+                                <p class="text-muted mb-0"><small>Today, 10:30 AM</small></p>
+                            </div>
+                            <span class="badge bg-success">Present</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">CS102: Data Structures</h6>
+                                <p class="text-muted mb-0"><small>Today, 9:00 AM</small></p>
+                            </div>
+                            <span class="badge bg-success">Present</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">CS104: Computer Networks</h6>
+                                <p class="text-muted mb-0"><small>Yesterday, 2:00 PM</small></p>
+                            </div>
+                            <span class="badge bg-success">Present</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">CS103: Database Systems</h6>
+                                <p class="text-muted mb-0"><small>Yesterday, 11:00 AM</small></p>
+                            </div>
+                            <span class="badge bg-warning">Late</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">CS101: Introduction to Programming</h6>
+                                <p class="text-muted mb-0"><small>Yesterday, 9:00 AM</small></p>
+                            </div>
+                            <span class="badge bg-success">Present</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-3">
+                    <button class="btn btn-outline-primary btn-sm">View All Records</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Smart Academic ERP{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="page-title">Dashboard</h2>
+        </div>
+    </div>
+    
+    <!-- Welcome Banner -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="academic-card">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fas fa-user text-white fs-3"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="mb-1">Welcome, {{ user.name }}!</h4>
+                        <p class="text-muted mb-0">{{ user.department }} | {{ user.semester }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Stats -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="card-title">Enrolled Courses</div>
+                <div class="card-value">5</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-title">Current CGPA</div>
+                <div class="card-value">3.85</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="card-title">Attendance</div>
+                <div class="card-value">88%</div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="academic-card text-center">
+                <div class="card-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="card-title">Upcoming Tasks</div>
+                <div class="card-value">4</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Recent Activities and Announcements -->
+    <div class="row">
+        <!-- Recent Announcements -->
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-bullhorn me-2"></i> Announcements</h5>
+                <div class="list-group">
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Mid-Semester Examinations</h6>
+                            <small class="text-muted">Today</small>
+                        </div>
+                        <p class="mb-1">Mid-semester exams will begin from November 15th. Check your timetable for details.</p>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Guest Lecture on AI Ethics</h6>
+                            <small class="text-muted">2 days ago</small>
+                        </div>
+                        <p class="mb-1">Don't miss the guest lecture on AI Ethics by Professor on November 10th.</p>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Fee Payment Reminder</h6>
+                            <small class="text-muted">5 days ago</small>
+                        </div>
+                        <p class="mb-1">Last date for payment of the second semester fees is November 30th.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activities -->
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-history me-2"></i> Recent Activities</h5>
+                <div class="list-group">
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Database Systems Assignment Submitted</h6>
+                            <small class="text-muted">Yesterday</small>
+                        </div>
+                        <p class="mb-1">You submitted the Database Normalization assignment.</p>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Grade Updated: Computer Networks</h6>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Your Quiz 2 grade has been updated. You scored 88%.</p>
+                    </div>
+                    <div class="list-group-item border-0 ps-0 pe-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">New Course Material Available</h6>
+                            <small class="text-muted">1 week ago</small>
+                        </div>
+                        <p class="mb-1">Software Engineering: New lectures on Agile Development added.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Upcoming Tasks and Deadlines -->
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-calendar me-2"></i> Upcoming Tasks & Deadlines</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Course</th>
+                                <th>Description</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-info">Assignment</span></td>
+                                <td>CS103</td>
+                                <td>Database Design Project</td>
+                                <td>Nov 12, 2023</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-danger">Quiz</span></td>
+                                <td>CS102</td>
+                                <td>Data Structures Quiz 3</td>
+                                <td>Nov 15, 2023</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-info">Assignment</span></td>
+                                <td>CS105</td>
+                                <td>Use Case Diagrams</td>
+                                <td>Nov 18, 2023</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-primary">Project</span></td>
+                                <td>CS104</td>
+                                <td>Network Protocols Implementation</td>
+                                <td>Nov 25, 2023</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

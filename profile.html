@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - Smart Academic ERP{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="page-title">My Profile</h2>
+        </div>
+    </div>
+    
+    <!-- Profile Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    {{ user.name[:1] }}
+                </div>
+                <div class="profile-info">
+                    <h3>{{ user.name }}</h3>
+                    <p><i class="fas fa-id-card me-2"></i> Enrollment: {{ user.enrollment }}</p>
+                    <p><i class="fas fa-graduation-cap me-2"></i> {{ user.department }} | {{ user.semester }}</p>
+                    <p><i class="fas fa-envelope me-2"></i> {{ user.email }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Profile Details -->
+    <div class="row">
+        <!-- Academic Information -->
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-graduation-cap me-2"></i> Academic Information</h5>
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th width="40%">Program</th>
+                                <td>Bachelor of Technology</td>
+                            </tr>
+                            <tr>
+                                <th>Department</th>
+                                <td>{{ user.department }}</td>
+                            </tr>
+                            <tr>
+                                <th>Year</th>
+                                <td>{{ user.year }}</td>
+                            </tr>
+                            <tr>
+                                <th>Semester</th>
+                                <td>{{ user.semester }}</td>
+                            </tr>
+                            <tr>
+                                <th>Batch</th>
+                                <td>2020-2024</td>
+                            </tr>
+                            <tr>
+                                <th>Current CGPA</th>
+                                <td>3.85</td>
+                            </tr>
+                            <tr>
+                                <th>Credits Completed</th>
+                                <td>85 / 160</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Personal Information -->
+        <div class="col-md-6 mb-4">
+            <div class="academic-card">
+                <h5 class="mb-3"><i class="fas fa-user me-2"></i> Personal Information</h5>
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th width="40%">Full Name</th>
+                                <td>{{ user.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date of Birth</th>
+                                <td>June 15, 2002</td>
+                            </tr>
+                            <tr>
+                                <th>Gender</th>
+                                <td>Male</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>+91 9876543210</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>123 Student Housing, University Campus, City - 110001</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Other Information -->
+    <div class="row">
+        <!-- Edit Profile Button -->
+        <div class="col-12 mb-4">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-academic"><i class="fas fa-edit me-2"></i> Edit Profile</button>
+                <button class="btn btn-outline-primary"><i class="fas fa-lock me-2"></i> Change Password</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

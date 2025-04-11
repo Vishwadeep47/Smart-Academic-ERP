@@ -26,16 +26,16 @@
             width: 200px;
             background-color: #fff;
             position: fixed;
-            top: 0;
-            left: -220px; /* Initially hidden */
-            height: 100%;
+            top: 70px; /* Push the sidebar below the header */
+            left: -250px; /* Initially hidden (moved further left) */
+            height: calc(100% - 70px); /* Adjust height to fit below the header */
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             padding-top: 20px;
             transition: left 0.3s ease; /* Smooth slide-in effect */
             z-index: 999; /* Ensure the sidebar stays above the content */
         }
         .sidebar.open {
-            left: 0; /* Show sidebar when open */
+            left: 10px; /* Show sidebar slightly away from the edge */
         }
         .sidebar a {
             display: block;
@@ -54,7 +54,7 @@
             transition: margin-left 0.3s ease; /* Smooth content shift */
         }
         .content.shifted {
-            margin-left: 220px; /* Adjusted for visible sidebar */
+            margin-left: 230px; /* Adjusted for visible sidebar */
         }
         .toggle-btn {
             position: fixed;

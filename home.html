@@ -16,6 +16,8 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            z-index: 1000; /* Ensure the header stays above other elements */
+            position: relative;
         }
         .header h1 {
             margin: 0;
@@ -25,10 +27,15 @@
             background-color: #fff;
             position: fixed;
             top: 0;
-            left: 0;
+            left: -220px; /* Initially hidden */
             height: 100%;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             padding-top: 20px;
+            transition: left 0.3s ease; /* Smooth slide-in effect */
+            z-index: 999; /* Ensure the sidebar stays above the content */
+        }
+        .sidebar.open {
+            left: 0; /* Show sidebar when open */
         }
         .sidebar a {
             display: block;
@@ -42,24 +49,53 @@
             color: #fff;
         }
         .content {
-            margin-left: 220px;
+            margin-left: 20px; /* Adjusted for hidden sidebar */
             padding: 20px;
+            transition: margin-left 0.3s ease; /* Smooth content shift */
+        }
+        .content.shifted {
+            margin-left: 220px; /* Adjusted for visible sidebar */
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it stays above other elements */
+        }
+        .toggle-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
     <div class="header">
         <h1>Welcome, User</h1>
     </div>
-    <div class="sidebar">
-        <a href="#subjects">Subjects</a>
-        <a href="#grades">Grades Tracking</a>
+    <div class="sidebar" id="sidebar">
+        <a href="#subjects">📚 Subjects</a>
+        <a href="#grades">📊 Grades Tracking</a>
         <a href="#timetable">Time Table</a>
-        <a href="#assignments">Assignments</a>
+        <a href="#assignments">✏️ Assignments</a>
     </div>
-    <div class="content">
+    <div class="content" id="content">
         <h2>Dashboard</h2>
         <p>Select an option from the sidebar to get started.</p>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            sidebar.classList.toggle('open');
+            content.classList.toggle('shifted');
+        }
+    </script>
 </body>
 </html>

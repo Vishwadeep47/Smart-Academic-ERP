@@ -13,17 +13,20 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f9;
+            background: url('https://imgs.search.brave.com/1BIKw3Vjd-DZUm8vAIV1oTS3_-I6Hl7y_NThI4jP5F4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvamFtc2hlZHB1/ci96Ny8wNjU3cHg2/NTcueDY1Ny4xODAz/MTUxODA3NTYuZzJ6/Ny9jYXRhbG9ndWUv/YXJrYS1qYWluLXVu/aXZlcnNpdHktZGhh/dGtpZGloLWphbXNo/ZWRwdXItY29sbGVn/ZXMtOHJ4cnIxanRs/My5qcGc_dz0zODQw/JnE9NzU') no-repeat center center fixed;
+            background-size: contain; /* Ensures the entire image is visible */
+            background-color: #f4f4f9; /* Fallback color for better contrast */
         }
-        .login-container {
+        .container {
             width: 90%;
             max-width: 400px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.85); /* Slightly more transparent */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px; /* Adds spacing around the container */
         }
-        .login-container h1 {
+        .container h1 {
             text-align: center;
             margin-bottom: 20px;
             color: #333;
@@ -47,7 +50,7 @@
             border-color: #007bff;
             outline: none;
         }
-        .login-btn {
+        .btn {
             width: 100%;
             padding: 10px;
             background-color: #007bff;
@@ -57,8 +60,17 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .login-btn:hover {
+        .btn:hover {
             background-color: #0056b3;
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .toggle-link:hover {
+            text-decoration: underline;
         }
         .error-message {
             color: red;
@@ -66,30 +78,71 @@
             text-align: center;
             margin-top: 10px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="enrollment">Enrollment Number</label>
-                <input type="text" id="enrollment" name="enrollment" placeholder="Enter your enrollment number" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-            <p class="error-message" id="errorMessage"></p>
-        </form>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h1>Login</h1>
+            <form>
+                <div class="form-group">
+                    <label for="loginEnrollment">Enrollment Number</label>
+                    <input type="text" id="loginEnrollment" name="enrollment" placeholder="Enter your enrollment number" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="button" class="btn" onclick="handleLogin()">Login</button>
+                <p class="error-message" id="loginErrorMessage"></p>
+            </form>
+            <p class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</p>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" class="hidden">
+            <h1>Sign Up</h1>
+            <form>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEnrollment">Enrollment Number</label>
+                    <input type="text" id="registerEnrollment" name="enrollment" placeholder="Enter your enrollment number" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="password" placeholder="Set a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="button" class="btn" onclick="handleRegister()">Register</button>
+                <p class="error-message" id="registerErrorMessage"></p>
+            </form>
+            <p class="toggle-link" onclick="toggleForms()">Already have an account? Login</p>
+        </div>
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const enrollment = document.getElementById('enrollment').value;
-            const password = document.getElementById('password').value;
+        // Toggle between Login and Registration forms
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            loginForm.classList.toggle('hidden');
+            registerForm.classList.toggle('hidden');
+        }
+
+        // Handle Login
+        function handleLogin() {
+            const enrollment = document.getElementById('loginEnrollment').value;
+            const password = document.getElementById('loginPassword').value;
 
             // Test credentials
             const testEnrollment = "123456";
@@ -97,10 +150,32 @@
 
             if (enrollment === testEnrollment && password === testPassword) {
                 alert("Login successful!");
+                window.location.href = "home.html"; // Redirect to home page
             } else {
-                document.getElementById('errorMessage').textContent = "Invalid enrollment number or password.";
+                document.getElementById('loginErrorMessage').textContent = "Invalid enrollment number or password.";
             }
-        });
+        }
+
+        // Handle Registration
+        function handleRegister() {
+            const fullName = document.getElementById('fullName').value;
+            const enrollment = document.getElementById('registerEnrollment').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                document.getElementById('registerErrorMessage').textContent = "Passwords do not match.";
+                return;
+            }
+
+            // Save registration details (for demonstration purposes, using localStorage)
+            localStorage.setItem('fullName', fullName);
+            localStorage.setItem('enrollment', enrollment);
+            localStorage.setItem('password', password);
+
+            alert("Registration successful! You can now log in.");
+            toggleForms(); // Switch back to login form
+        }
     </script>
 </body>
 </html>

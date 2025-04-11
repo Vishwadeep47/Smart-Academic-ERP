@@ -1,0 +1,501 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #1abc9c;
+    --light: #ecf0f1;
+    --danger: #e74c3c;
+    --warning: #f39c12;
+    --info: #3498db;
+    --success: #2ecc71;
+    --dark: #1a252f;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Login & Registration Forms */
+.auth-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.8), rgba(26, 37, 47, 0.9)), 
+                url('https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245793_1280.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.auth-form {
+    padding: 25px;
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.25);
+}
+
+.btn-academic {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-academic:hover, .btn-academic:focus {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Dashboard */
+.dashboard-sidebar {
+    background-color: var(--primary);
+    color: white;
+    min-height: 100vh;
+    position: fixed;
+    width: 250px;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.sidebar-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 10px 15px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 4px;
+    z-index: 1001;
+}
+
+.dashboard-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    background-color: var(--dark);
+}
+
+.dashboard-logo h4 {
+    margin: 0;
+    font-weight: 700;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.dashboard-logo i {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+.dashboard-nav {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.nav-item {
+    margin-bottom: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.nav-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--accent);
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.nav-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px 20px;
+}
+
+.dashboard-content {
+    margin-left: 250px;
+    padding: 30px;
+    transition: all 0.3s;
+}
+
+.page-title {
+    color: var(--primary);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 80px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+/* Cards */
+.academic-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.academic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.academic-card .card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.academic-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.academic-card .card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.academic-card .progress {
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Tables */
+.academic-table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.academic-table th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.academic-table td {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    vertical-align: middle;
+}
+
+.academic-table .table-success {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.academic-table .table-warning {
+    background-color: rgba(243, 156, 18, 0.1);
+}
+
+.academic-table .table-danger {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Badges */
+.badge-success {
+    background-color: var(--success);
+    color: white;
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+.badge-warning {
+    background-color: var(--warning);
+    color: white;
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+.badge-danger {
+    background-color: var(--danger);
+    color: white;
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+/* Profile section */
+.profile-header {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-right: 25px;
+}
+
+.profile-info h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .dashboard-sidebar {
+        left: -250px;
+    }
+    
+    .dashboard-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    .sidebar-open .dashboard-sidebar {
+        left: 0;
+    }
+    
+    .sidebar-open .dashboard-content {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-open .dashboard-content {
+        margin-left: 0;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Animations */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Timetable specific styles */
+.timetable-container {
+    overflow-x: auto;
+}
+
+.timetable {
+    min-width: 800px;
+}
+
+.timetable th {
+    width: 18%;
+    text-align: center;
+}
+
+.timetable th:first-child {
+    width: 10%;
+}
+
+.timetable-slot {
+    background-color: rgba(26, 188, 156, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.timetable-slot h6 {
+    margin: 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.timetable-slot p {
+    margin: 5px 0 0;
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+/* Library specific styles */
+.book-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-card-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px;
+}
+
+.book-card-body {
+    padding: 15px;
+    background-color: white;
+}
+
+.book-status {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.book-status.available {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--success);
+}
+
+.book-status.borrowed {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+}
+
+/* Flash messages */
+.flash-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.flash-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slide-in 0.3s ease forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.flash-success {
+    background-color: var(--success);
+    color: white;
+}
+
+.flash-danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+.flash-info {
+    background-color: var(--info);
+    color: white;
+}
+
+.flash-warning {
+    background-color: var(--warning);
+    color: white;
+}
